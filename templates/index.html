@@ -229,90 +229,20 @@
 							<!-- Start Featured Tours content -->
 							<div class="mu-featured-tours-content">
 								<div class="row">
-
+									{% for locations in dest %}
 									<div class="col-md-4">
 										<div class="mu-featured-tours-single">
-											<img src="{% static '/images/abu.jpg' %}" alt="img">
+											<img src="{{locations.image.url}}" alt="img">
 											<div class="mu-featured-tours-single-info">
-												<h3>Abu Dhabi</h3>
-												<h4> 2 Days, 3 Nights</h4>
-												<span class="mu-price-tag">$650</span>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quidem
-													earum sed. Sint, magnam eligendi!</p>
+												<h3>{{locations.name}}</h3>
+												<h4>{{locations.package}}</h4>
+												<span class="mu-price-tag">${{locations.price}}</span>
+												<p>{{locations.description}}</p>
 												<a href="#" class="mu-book-now-btn">Book Now</a>
 											</div>
 										</div>
 									</div>
-
-									<div class="col-md-4">
-										<div class="mu-featured-tours-single">
-											<img src="{% static 'images/thai.jpg' %}" alt="img">
-											<div class="mu-featured-tours-single-info">
-												<h3>Thailand</h3>
-												<h4> 2 Days, 3 Nights</h4>
-												<span class="mu-price-tag">$845</span>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quidem
-													earum sed. Sint, magnam eligendi!</p>
-												<a href="#" class="mu-book-now-btn">Book Now</a>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-md-4">
-										<div class="mu-featured-tours-single">
-											<img src="{% static 'images/french.jpg' %}" alt="img">
-											<div class="mu-featured-tours-single-info">
-												<h3>France</h3>
-												<h4> 2 Days, 3 Nights</h4>
-												<span class="mu-price-tag">$450</span>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quidem
-													earum sed. Sint, magnam eligendi!</p>
-												<a href="#" class="mu-book-now-btn">Book Now</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="mu-featured-tours-single">
-											<img src="{% static 'images/switzer.jpg' %}" alt="img">
-											<div class="mu-featured-tours-single-info">
-												<h3>Switzerland</h3>
-												<h4> 2 Days, 3 Nights</h4>
-												<span class="mu-price-tag">$1030</span>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quidem
-													earum sed. Sint, magnam eligendi!</p>
-												<a href="#" class="mu-book-now-btn">Book Now</a>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-md-4">
-										<div class="mu-featured-tours-single">
-											<img src="{% static 'images/itly.jpg' %}" alt="img">
-											<div class="mu-featured-tours-single-info">
-												<h3>Italy</h3>
-												<h4> 2 Days, 3 Nights</h4>
-												<span class="mu-price-tag">$650</span>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quidem
-													earum sed. Sint, magnam eligendi!</p>
-												<a href="#" class="mu-book-now-btn">Book Now</a>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-md-4">
-										<div class="mu-featured-tours-single">
-											<img src="{% static 'images/london.jpg' %}" alt="img">
-											<div class="mu-featured-tours-single-info">
-												<h3>England</h3>
-												<h4> 2 Days, 3 Nights</h4>
-												<span class="mu-price-tag">$950</span>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quidem
-													earum sed. Sint, magnam eligendi!</p>
-												<a href="#" class="mu-book-now-btn">Book Now</a>
-											</div>
-										</div>
-									</div>
-
+									{% endfor %}
 								</div>
 							</div>
 							<!-- End Featured Tours content -->
@@ -403,7 +333,7 @@
 								</div>
 
 								<div class="mu-clients-single">
-									<img src="{% static 'images/sponsor-logo6.png' %}" alt="Brand Logo">
+									<img src="{% static 'images/sponsor-logo-6.png' %}" alt="Brand Logo">
 								</div>
 							</div>
 							<!-- End Clients brand logo -->

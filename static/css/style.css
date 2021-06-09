@@ -222,7 +222,7 @@ iframe {
 /*--------------------*/
 
 #mu-hero {
-	background-image: url("/static/images/head-featured-bg.jpg");
+	background-image: url("/static/images/headfeaturedbg.jpg");
 	display: inline;
 	float: left;
 	width: 100%;
@@ -503,7 +503,7 @@ iframe {
 
 
 #mu-video {
-	background-image: url("/static/images/about-video-bg.jpeg");
+	background-image: url("/static/images/aboutvideobg.jpg");
 	background-attachment: fixed;
 	background-position: center center;
 	-webkit-background-size: cover;
@@ -640,7 +640,7 @@ iframe {
 /*--------------------*/
 
 #mu-testimonials {
-	background-image: url("/static/images/testimonials-bg.jpeg");
+	background-image: url("/static/images/testimonialsbg.jpeg");
 	background-position: center center;
 	background-size: cover;
 	background-attachment: fixed;
