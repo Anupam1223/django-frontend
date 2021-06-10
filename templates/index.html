@@ -263,34 +263,15 @@
 
 							<div class="mu-testimonials-block">
 								<ul class="mu-testimonial-slide">
-
+									{% for travelers in traveler %}
 									<li>
 										<i class="fa fa-quote-left mu-client-quote" aria-hidden="true"></i>
-										<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-											Lorem Ipsum has been the industry's standard dummy text ever."</p>
-										<img class="mu-rt-img" src="{% static 'images/traveler1.jpg' %}" alt="img">
-										<h5 class="mu-rt-name"> - Alice Boga</h5>
-										<span class="mu-rt-title">Zurich, Switzerland </span>
+										<p>{{travelers.review}}</p>
+										<img class="mu-rt-img" src="{{travelers.image.url}}" alt="img">
+										<h5 class="mu-rt-name"> - {{travelers.travelername}}</h5>
+										<span class="mu-rt-title">{{travelers.location}} </span>
 									</li>
-
-									<li>
-										<i class="fa fa-quote-left mu-client-quote" aria-hidden="true"></i>
-										<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-											Lorem Ipsum has been the industry's standard dummy text ever."</p>
-										<img class="mu-rt-img" src="{% static 'images/traveler2.jpg' %}" alt="img">
-										<h5 class="mu-rt-name"> - Jhon Doe</h5>
-										<span class="mu-rt-title">Pattaya., Thailand</span>
-									</li>
-
-									<li>
-										<i class="fa fa-quote-left mu-client-quote" aria-hidden="true"></i>
-										<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-											Lorem Ipsum has been the industry's standard dummy text ever."</p>
-										<img class="mu-rt-img" src="{% static 'images/traveler3.jpg' %}" alt="img">
-										<h5 class="mu-rt-name"> - Jessica Doe</h5>
-										<span class="mu-rt-title">Bali, Indonesia</span>
-									</li>
-
+									{% endfor %}
 								</ul>
 							</div>
 
@@ -333,7 +314,7 @@
 								</div>
 
 								<div class="mu-clients-single">
-									<img src="{% static 'images/sponsor-logo-6.png' %}" alt="Brand Logo">
+									<img src="{% static 'images/sponsor-logo6.png' %}" alt="Brand Logo">
 								</div>
 							</div>
 							<!-- End Clients brand logo -->
@@ -375,8 +356,9 @@
 									<div class="col-md-12">
 										<div class="mu-contact-form-area">
 											<div id="form-messages"></div>
-											<form id="ajax-contact" method="post" action="mailer.php"
+											<form id="ajax-contact" method="post" action="{% url 'travel:aboutview' %}"
 												class="mu-contact-form">
+												{% csrf_token %}
 												<div class="row">
 													<div class="col-md-6">
 														<div class="form-group">
@@ -403,7 +385,7 @@
 													<textarea class="form-control" placeholder="Message" id="message"
 														name="message" required></textarea>
 												</div>
-												<button type="submit" class="mu-send-msg-btn"><span>Send
+												<button type="submit" class="mu-send-msg-btn" name="inquiry"><span>Send
 														Message</span></button>
 											</form>
 										</div>
